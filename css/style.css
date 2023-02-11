@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.gameboard-container {
+  width: 450px;
+  height: 450px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid red;
+}
+
+.cell4, .cell5, .cell6 {
+  border-top: 1px solid cyan;
+  border-bottom: 1px solid cyan;
+}
+
+.cell2, .cell5, .cell8 {
+  border-left: 1px solid cyan;
+  border-right: 1px solid cyan;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+}
