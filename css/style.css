@@ -3,28 +3,66 @@
   padding: 0;
   margin: 0;
 }
-.gameboard-container {
-  width: 450px;
-  height: 450px;
+
+.container {
+  width: 100%;
+  height: 100vh;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr 1fr;
+  justify-items: center;
+  background-color: grey;
+}
+
+.top, .mid, .bottom {
   border: 1px solid red;
+  width: 60%;
+  background-color: rgba(85, 186, 216, 0.203);
+}
+/* TOP GAMEBOARD UI STYLING */
+.top {
+  display: flex;
 }
 
-.cell4, .cell5, .cell6 {
-  border-top: 1px solid cyan;
-  border-bottom: 1px solid cyan;
+.playertop {
+  border: 1px solid blue;
+  width: 100%;
 }
 
-.cell2, .cell5, .cell8 {
-  border-left: 1px solid cyan;
-  border-right: 1px solid cyan;
-}
+/* MID GAMEBOARD UI STYLING */
+.mid {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  justify-content: center;
+  align-content: center;
+}  
+
 
 .cell {
+  border: 1px solid cyan;
+  width: 100%;
+  height: 100%;
+}
+
+/* BOTTOM GAMEBOARD UI STYLING */
+.bottom {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 70px;
+  flex-direction: column;
+}
+
+.buttons {
+  height: 100%;
+  border: 1px solid cyan;
+}
+
+.bottom_playerUI {
+  height: 100%;
+  border: 1px solid cyan;
+  display: flex;
+}
+
+.playerbot {
+  border: 1px solid blue;
+  width: 100%;
 }
