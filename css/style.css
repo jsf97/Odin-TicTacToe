@@ -12,6 +12,7 @@
   grid-template-rows: 1fr 6fr 1fr;
   justify-items: center;
   background-color: grey;
+  filter: blur(1px);
 }
 
 .top, .mid, .bottom {
@@ -65,4 +66,43 @@
 .playerbot {
   border: 1px solid blue;
   width: 100%;
+}
+
+/* DATA STYLING */
+.data {
+  position: absolute;
+  width: 550px;
+  height: 350px;
+  border: 1px solid red;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.pdata {
+  border: 1px solid blue;
+  width: 50%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+}
+
+.name input {
+  width: 100%;
+}
+
+#p1name {
+  width: 60%;
 }

@@ -3,8 +3,16 @@ const screen = document.querySelector('.container')
 
 const mid = document.querySelector('.mid');
 
-for (i = 0; i < 9; i++) {
-  let cell = document.createElement('div');
-  cell.classList.add('cell', `cell-${i}`);
-  mid.appendChild(cell);
+
+
+// FACTORY FUNCTION (must be atacched on buttons)
+function newPlayer(name, mark) {
+  return {name, mark}
 }
+
+// BEFORE PLAY BUTTON
+
+
+
+
+// AFTER PLAY BUTTON
