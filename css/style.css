@@ -85,24 +85,32 @@
   background-color: white;
 }
 
-.pdata {
-  border: 1px solid blue;
-  width: 50%;
-  height: 50px;
+.data form {
+  border: 1px solid red;
+  width: 500px;
+  height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  border: 1px solid red;
 }
 
-.name {
-  display: flex;
-  align-items: center;
-}
-
-.name input {
+.players-data {
+  border: 1px solid blue;
   width: 100%;
+  height: 80%;
+  display: flex;
 }
 
-#p1name {
-  width: 60%;
+.player {
+  width: 50%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.send-button {
+  border: 1px solid green;
+  height: 20%;
 }
