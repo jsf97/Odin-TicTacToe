@@ -39,12 +39,36 @@
 
   <div class="data">
     <form action="" method="post">
-      <div class="players-data">
-        <div class="player p1side"></div>
-        <div class="player p2side"></div>
+      <div class="player p1-data">
+        <div class="p1-name">
+          <div>Player 1 name:</div>
+          <label for="p1name" id="p1name"></label>
+          <input type="text" id="p1name">
+        </div>
+        <div class="p1-mark">
+          <div>Choose mark:</div>
+          <div class="marks">
+            <span id="p1-X">X</span>
+            <span id="p1-0">0</span>
+          </div>
+        </div>
       </div>
-      <div class="send-button">
-
+      <div class="player p2-data">
+        <div class="p2-name">
+          <div>Player 2 name:</div>
+          <label for="p2name" id="p2name"></label>
+          <input type="text" id="p2name">
+        </div>
+        <div class="p2-mark">
+          <div>Choose mark:</div>
+          <div class="marks">
+            <span id="p2-X">X</span>
+            <span id="p2-0">0</span>
+          </div>
+        </div>
+      </div>
+      <div class="send-data">
+        <input type="submit">
       </div>
     </form>
   </div>
