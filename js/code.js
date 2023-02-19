@@ -7,7 +7,8 @@ const arrayGameboard = []
 
 for(i = 0; i <= 8; i++) {
   let cell = document.createElement('div');
-  cell.classList.add('cell');
+  cell.classList.add('cell', `cell-${i}`);
+  // cell.textContent = 
   arrayGameboard.push(cell)
   mid.appendChild(cell);
 }
@@ -40,45 +41,64 @@ let p0 = false;
 let winCombinations = [[arrayGameboard[0], arrayGameboard[1], arrayGameboard[2]],
                        [arrayGameboard[3], arrayGameboard[4], arrayGameboard[5]],
                        [arrayGameboard[6], arrayGameboard[7], arrayGameboard[8]],
+
+                       [arrayGameboard[0], arrayGameboard[3], arrayGameboard[6]],
+                       [arrayGameboard[1], arrayGameboard[4], arrayGameboard[7]],
+                       [arrayGameboard[2], arrayGameboard[5], arrayGameboard[8]],
+
                        [arrayGameboard[0], arrayGameboard[4], arrayGameboard[8]],
                        [arrayGameboard[2], arrayGameboard[4], arrayGameboard[6]]];
 
-function checkWinX(win) {
-  return win.textContent === 'X'
-};
 
-function checkWin0(win) {
-  return win.textContent === '0'
-};
 
-(function abc() {
-  arrayGameboard.forEach((e) => {
-    e.addEventListener('click', ()=> {
-      if (pX) {
-        e.textContent = 'X'
-        pX = false;
-        p0 = true;
-        for(i = 0; i < winCombinations.length; i++) {
-          if(winCombinations[i].every(checkWinX)) {
-            console.log('a')
-            p0 = false;
-          }
-        }
-      }
-      else if (p0) {
-        e.textContent = '0'
-        pX = true;
-        p0 = false;
-        for(i = 0; i < winCombinations.length; i++) {
-          if(winCombinations[i].every(checkWin0)) {
-            console.log('a')
-            pX = false;
-          }
-        }
-      }
+const checkWinX = (win) => {
+  if (win.textContent === 'X') {
+    return true
+  }
+}
 
-    })
+const checkWin0 = (win) => {
+  if (win.textContent === '0') {
+    return true
+  }
+}
+
+const getWinner = () => {
+  winCombinations.forEach((e) => {
+    if ((e.every(checkWinX)) || (e.every(checkWin0))) {
+      console.log('Ganaste')
+      e.forEach((x) => {
+        x.style = 'background-color: green; color:white; transition: .2s'
+      })
+      turn0 = false;
+      turnX = false;
+    }
   })
-})()
+}
+
+let turnX = true;
+let turn0 = false;
 
 
+arrayGameboard.forEach((e) => {
+  e.addEventListener('click', ()=> {
+    if (turnX === true && e.textContent !== undefined) {
+      e.textContent = 'X'
+      turn0 = true;
+      turnX = false;
+      getWinner()
+
+    }
+
+    else if (turn0 === true && e.textContent !== undefined) {
+      e.textContent = '0'
+      turn0 = false;
+      turnX = true;
+      getWinner()
+    }
+  })
+})
+
+// for (i = 0; i < winCombinations.length; i++) {
+//   console.log(winCombinations[i].every(checkWin))
+// }
